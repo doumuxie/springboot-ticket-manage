@@ -33,7 +33,7 @@ public class LogAspect {
     @Before("controllerLog()")
     public void doControllerBefore(JoinPoint joinPoint) {
         // 获取请求method 及 参数
-        logger.info("控制层controller===>方法={},参数={}",
+        logger.info("控制层controller===>方法【{}】,参数【{}】",
                 joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName() + "()",
                 JSON.toJSON(joinPoint.getArgs()));
 
@@ -42,7 +42,7 @@ public class LogAspect {
     @Before("serviceLog()")
     public void doServiceBefore(JoinPoint joinPoint) {
         // 获取请求method 及 参数
-        logger.info("业务层service===>方法={},参数={}",
+        logger.info("业务层service===>方法【{}】,参数【{}】",
                 joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName() + "()",
                 JSON.toJSON(joinPoint.getArgs()));
 
